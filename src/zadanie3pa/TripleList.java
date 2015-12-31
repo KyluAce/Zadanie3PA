@@ -27,11 +27,11 @@ public class TripleList <T> implements Iterable<T>
         private class TripleIterator implements Iterator<T>
         {
 
-        private int iteracja = 0;
+        private int iterator = 0;
 
         public boolean hasNext() 
         {
-            return licznik < this.iteracja;
+            return licznik < this.iterator;
         }
 
         public T next() 
@@ -40,7 +40,7 @@ public class TripleList <T> implements Iterable<T>
             {   
                 int i = 0;
                 TripleList<T> element = TripleList.this;
-                while (i<iteracja) i++;             
+                while (i<iterator) i++;             
                 {
                     if ((i%2==0))
                     {
@@ -51,7 +51,7 @@ public class TripleList <T> implements Iterable<T>
                         element = element.podajSrodkowy().podajNastepny();
                     }
                 }
-                iteracja++;
+                iterator++;
                 return element.getValue();
             }
             //throw new NoSuchElementException();
